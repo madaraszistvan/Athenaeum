@@ -1,6 +1,8 @@
 <!--todo header component, maybe nav component-->
-<h1 class="page-header">
-  {{title}}
-</h1>
+<div class="container">
+  <h1 class="page-header text-lg-center">
+    {{title}}
+  </h1>
 
-<book *ngFor="let book of books" [book]="book"></book>
+  <book *ngFor="let book of books" [book]="book"></book>
+</div>
