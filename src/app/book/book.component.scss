@@ -1,11 +1,14 @@
+$hoverColor: lightblue;
 $linkColor: lightblue;
 
 .card {
   a {
     cursor: pointer;
+    color: $linkColor;
+    text-decoration: none;
 
-    :hover {
-      color: $linkColor;
+    :hover, :active, :visited {
+      color: $hoverColor;
     }
   }
 }
