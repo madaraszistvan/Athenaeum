@@ -6,8 +6,7 @@ import { BookService } from './book/book.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: [
-    './app.component.css',
-    '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+    './app.component.css'
   ]
 })
 export class AppComponent {
