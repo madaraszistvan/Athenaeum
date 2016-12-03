@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 import { ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AppComponent } from './app.component';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
