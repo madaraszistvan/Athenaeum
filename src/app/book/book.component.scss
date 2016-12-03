@@ -1,0 +1,11 @@
+$linkColor: lightblue;
+
+.card {
+  a {
+    cursor: pointer;
+
+    :hover {
+      color: $linkColor;
+    }
+  }
+}
