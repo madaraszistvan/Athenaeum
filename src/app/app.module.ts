@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
+import { BookService } from './book/book.service';
 
 @NgModule({
   declarations: [
@@ -15,10 +15,9 @@ import { BookComponent } from './book/book.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    ButtonsModule
+    HttpModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

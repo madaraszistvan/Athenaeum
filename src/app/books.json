@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "isbn": 9781558005686,
+      "title": "The hitchhicker's gide to the galaxy",
+      "author": "Douglas Adams"
+    },
+    {
+      "isbn": 9783438015143,
+      "title": "Bible",
+      "author": "Sacred Text"
+    },
+    {
+      "isbn": 9789632276984,
+      "title": "The Unbearable Lightness of Being",
+      "author": "Milan Kundera"
+    },
+    {
+      "isbn": 9783837130980,
+      "title": "A ​teljesség felé",
+      "author": "Weöres Sándor"
+    },
+    {
+      "isbn": 9788371295263,
+      "title": "The Cyberiad",
+      "author": "Stanislaw Lem"
+    },
+    {
+      "isbn": 9788422699040,
+      "title": "Solaris",
+      "author": "Stanislaw Lem"
+    }
+  ]
+}
