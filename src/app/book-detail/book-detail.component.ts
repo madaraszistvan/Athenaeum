@@ -17,6 +17,7 @@ export class BookDetailComponent implements OnInit {
   @Input() title: string;
   @Input() author: string;
   @Input() editable: boolean;
+  private newBook: boolean;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -30,7 +31,11 @@ export class BookDetailComponent implements OnInit {
         let isbn = params['id'];
         this.editable = params['editable'];
 
-        if(isbn) {
+        // if new book added
+        if (isbn == 0) {
+          this.newBook = true;
+        } else {
+          this.newBook = false;
           let book: Book = this.bookService.getBook(isbn);
           this.isbn = book.isbn;
           this.title = book.title;
@@ -41,11 +46,20 @@ export class BookDetailComponent implements OnInit {
   }
 
   save() {
-    let book: Book = this.bookService.getBook(this.isbn);
+    let book: Book;
+    if (this.newBook) {
+      book = new Book();
+      book.isbn = this.isbn
+    } else {
+      book = this.bookService.getBook(this.isbn)
+    }
+
     book.title = this.title;
     book.author = this.author;
 
-    this.router.navigate(['/books']);
+    this.newBook && this.bookService.addBook(book);
+
+    this.router.navigate(['/books'])
   }
 
 }

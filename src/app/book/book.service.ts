@@ -44,4 +44,8 @@ export class BookService {
   getBook(isbn: number) {
     return this.data.filter((item: Book) => item.isbn == isbn)[0]
   }
+
+  addBook(book: Book) {
+    this.data.push(book)
+  }
 }

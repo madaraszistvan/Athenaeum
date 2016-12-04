@@ -11,8 +11,11 @@
                  id="isbn"
                  aria-describedby="isbnHelp"
                  placeholder="Enter ISBN number"
+                 autocomplete="off"
                  value="{{isbn}}"
-                 disabled>
+                 [(ngModel)]="isbn"
+                 [ngModelOptions]="{standalone: true}"
+                 [disabled]="!newBook">
           <label *ngIf="!editable">: {{isbn}}</label>
           <!--<small id="isbnHelp" class="form-text text-muted"></small>-->
         </div>
@@ -24,6 +27,7 @@
                  class="form-control"
                  id="title"
                  placeholder="Enter Title"
+                 autocomplete="off"
                  value="{{title}}"
                  [(ngModel)]="title"
                  [ngModelOptions]="{standalone: true}">
@@ -37,6 +41,7 @@
                  class="form-control"
                  id="author"
                  placeholder="Enter author"
+                 autocomplete="off"
                  value="{{author}}"
                  [(ngModel)]="author"
                  [ngModelOptions]="{standalone: true}">

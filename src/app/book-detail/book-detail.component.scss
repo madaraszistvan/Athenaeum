@@ -1,0 +1,16 @@
+//todo resolve styles.css or somehow put to app.component.scss
+
+$btnBckg: hsl(24, 100%, 63%);
+$btnHoverBckg: hsl(24, 100%, 44%);
+
+.btn-primary {
+  background-color: $btnBckg;
+  border-color: $btnBckg;
+  outline: none;
+
+  &:active {
+    background-color: $btnHoverBckg;
+    border-color: $btnHoverBckg;
+    outline: none;
+  }
+}
