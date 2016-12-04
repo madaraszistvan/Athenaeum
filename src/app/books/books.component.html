@@ -1,1 +1,9 @@
-<book *ngFor="let book of books" [book]="book"></book>
+<div class="row">
+  <div class="col-xs-12">
+    <input id="search" placeholder="Search..." #listFilter (keyup)="0"/>
+  </div>
+</div>
+
+<br>
+
+<book *ngFor="let book of books | bookFilter:listFilter.value" [book]="book"></book>

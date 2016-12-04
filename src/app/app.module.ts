@@ -10,12 +10,16 @@ import { BookService } from './book/book.service';
 import { BooksComponent } from './books/books.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 
+import { BookFilterPipe } from './books/books.pipe';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
     BooksComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    BookFilterPipe
   ],
   imports: [
     BrowserModule,
