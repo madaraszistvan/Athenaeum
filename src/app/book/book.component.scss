@@ -5,6 +5,10 @@ $cardBackground: lightcyan;
 .card {
   background-color: $cardBackground;
 
+  .fa-book {
+    font-size: 2.5em;
+  }
+
   a {
     cursor: pointer;
     color: $linkColor;
@@ -16,7 +20,6 @@ $cardBackground: lightcyan;
   }
 
   .card-text {
-    margin-top: -15px;
-    margin-left: 28px;
+    margin-top: -10px;
   }
 }

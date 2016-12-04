@@ -24,7 +24,8 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     RouterModule.forRoot([
       { path: '', redirectTo: 'books', pathMatch: 'full' },
       { path: 'books', component: BooksComponent },
-      { path: 'books/:id', component: BookDetailComponent }
+      { path: 'books/:id', component: BookDetailComponent },
+      { path: 'books/:id/:editable', component: BookDetailComponent }
     ])
   ],
   providers: [BookService],

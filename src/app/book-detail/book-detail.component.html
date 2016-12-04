@@ -1,8 +1,47 @@
-<div class="card row">
+<div class="row">
+  <div class="col-xs-6">
 
-  <p>
-    {{book | json}}
-  </p>
+    <div class="card card-block">
+      <form>
+        <div class="form-group">
+          <label for="isbn">ISBN</label>
+          <input *ngIf="editable"
+                 type="text"
+                 class="form-control"
+                 id="isbn"
+                 aria-describedby="isbnHelp"
+                 placeholder="Enter ISBN number"
+                 value="{{isbn}}">
+          <label *ngIf="!editable">: {{isbn}}</label>
+          <!--<small id="isbnHelp" class="form-text text-muted"></small>-->
+        </div>
 
-  <p><a [routerLink]="['/books']">Back</a></p>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input *ngIf="editable"
+                 type="text"
+                 class="form-control"
+                 id="title"
+                 placeholder="Enter Title"
+                 value="{{title}}">
+          <label *ngIf="!editable">: {{title}}</label>
+        </div>
+
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input *ngIf="editable"
+                 type="text"
+                 class="form-control"
+                 id="author"
+                 placeholder="Enter author"
+                 value="{{author}}">
+          <label *ngIf="!editable">: {{author}}</label>
+        </div>
+
+      </form>
+
+      <p><a [routerLink]="['/books']">Back</a></p>
+    </div>
+
+  </div>
 </div>

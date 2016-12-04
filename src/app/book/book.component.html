@@ -1,15 +1,18 @@
-<div class="card card-block row">
-  <div class="col-lg-11 col-md-11">
-    <a [routerLink]="['/books', book.isbn]" class="title-link">
-      <h4 class="card-title"><i class="fa fa-book"></i> {{book.title}}</h4>
-    </a>
-  </div>
-  <div class="col-lg-1 col-md-1 text-lg-center">
-    <a class="edit-link">
-      <i class="fa fa-pencil"></i>
-    </a>
-  </div>
-  <div class="col-md-12">
-    <p class="card-text">{{book.author}}</p>
+<div class="card card-block">
+  <div class="row">
+    <div class="col-xs-1 text-sm-center">
+      <i class="fa fa-book"></i>
+    </div>
+    <div class="col-xs-10">
+      <a [routerLink]="['/books', book.isbn]" class="title-link">
+        <h4 class="card-title">{{book.title}}</h4>
+      </a>
+      <p class="card-text">{{book.author}}</p>
+    </div>
+    <div class="col-xs-1 text-sm-center">
+      <a [routerLink]="['/books', book.isbn, true]" class="edit-link">
+        <i class="fa fa-pencil"></i>
+      </a>
+    </div>
   </div>
 </div>

@@ -14,6 +14,10 @@ import { Book } from '../book/book';
 export class BookDetailComponent implements OnInit {
 
   private book: Book;
+  private isbn: number;
+  private title:string;
+  private author:string;
+  private editable:boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,9 +29,14 @@ export class BookDetailComponent implements OnInit {
     this.route.params.forEach(
       (params: Params) => {
         let isbn = params['id'];
+        this.editable = params['editable'];
 
         this.bookService.getBook(isbn)
-          .subscribe(data => this.book = data)
+          .subscribe(data => {
+            this.isbn = data.isbn;
+            this.title = data.title;
+            this.author = data.author
+          })
 
       }
     )
