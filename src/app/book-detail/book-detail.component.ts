@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {Component, OnInit, Input} from '@angular/core';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {BookService} from '../book/book.service';
 import {Book} from '../book/book';
 
@@ -13,13 +13,13 @@ import {Book} from '../book/book';
 })
 export class BookDetailComponent implements OnInit {
 
-  private book: Book;
   private isbn: number;
-  private title: string;
-  private author: string;
-  private editable: boolean;
+  @Input() title: string;
+  @Input() author: string;
+  @Input() editable: boolean;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private bookService: BookService) {
   }
 
@@ -30,12 +30,22 @@ export class BookDetailComponent implements OnInit {
         let isbn = params['id'];
         this.editable = params['editable'];
 
-        let book: Book = this.bookService.getBook(isbn);
-        this.isbn = book.isbn;
-        this.title = book.title;
-        this.author = book.author
+        if(isbn) {
+          let book: Book = this.bookService.getBook(isbn);
+          this.isbn = book.isbn;
+          this.title = book.title;
+          this.author = book.author
+        }
       }
     )
+  }
+
+  save() {
+    let book: Book = this.bookService.getBook(this.isbn);
+    book.title = this.title;
+    book.author = this.author;
+
+    this.router.navigate(['/books']);
   }
 
 }

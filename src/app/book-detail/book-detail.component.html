@@ -11,7 +11,8 @@
                  id="isbn"
                  aria-describedby="isbnHelp"
                  placeholder="Enter ISBN number"
-                 value="{{isbn}}">
+                 value="{{isbn}}"
+                 disabled>
           <label *ngIf="!editable">: {{isbn}}</label>
           <!--<small id="isbnHelp" class="form-text text-muted"></small>-->
         </div>
@@ -23,7 +24,9 @@
                  class="form-control"
                  id="title"
                  placeholder="Enter Title"
-                 value="{{title}}">
+                 value="{{title}}"
+                 [(ngModel)]="title"
+                 [ngModelOptions]="{standalone: true}">
           <label *ngIf="!editable">: {{title}}</label>
         </div>
 
@@ -34,13 +37,16 @@
                  class="form-control"
                  id="author"
                  placeholder="Enter author"
-                 value="{{author}}">
+                 value="{{author}}"
+                 [(ngModel)]="author"
+                 [ngModelOptions]="{standalone: true}">
           <label *ngIf="!editable">: {{author}}</label>
         </div>
 
       </form>
 
-      <p><a [routerLink]="['/books']">Back</a></p>
+      <a [routerLink]="['/books']">Back</a>
+      <button *ngIf="editable" (click)="save()" class="btn btn-primary pull-right">Save</button>
     </div>
 
   </div>
