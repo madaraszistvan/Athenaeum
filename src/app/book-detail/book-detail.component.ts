@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { BookService } from '../book/book.service';
-import { Book } from '../book/book';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
+import {BookService} from '../book/book.service';
+import {Book} from '../book/book';
 
 @Component({
   selector: 'book-detail',
@@ -15,14 +15,13 @@ export class BookDetailComponent implements OnInit {
 
   private book: Book;
   private isbn: number;
-  private title:string;
-  private author:string;
-  private editable:boolean;
+  private title: string;
+  private author: string;
+  private editable: boolean;
 
-  constructor(
-    private route: ActivatedRoute,
-    private bookService: BookService
-  ) { }
+  constructor(private route: ActivatedRoute,
+              private bookService: BookService) {
+  }
 
   ngOnInit() {
     // this.route is an Observable
@@ -31,13 +30,10 @@ export class BookDetailComponent implements OnInit {
         let isbn = params['id'];
         this.editable = params['editable'];
 
-        this.bookService.getBook(isbn)
-          .subscribe(data => {
-            this.isbn = data.isbn;
-            this.title = data.title;
-            this.author = data.author
-          })
-
+        let book: Book = this.bookService.getBook(isbn);
+        this.isbn = book.isbn;
+        this.title = book.title;
+        this.author = book.author
       }
     )
   }
