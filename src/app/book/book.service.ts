@@ -12,4 +12,12 @@ export class BookService {
     return this.http.get('app/books.json')
       .map(response => <Book[]>response.json().data);
   }
+
+  getBook(isbn: number) {
+    return this.http.get('app/books.json')
+      .map(response => {
+        return <Book>response.json().data
+          .filter((item: Book) => item.isbn == isbn)[0]
+      })
+  }
 }

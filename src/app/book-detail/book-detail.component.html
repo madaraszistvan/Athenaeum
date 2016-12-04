@@ -1,3 +1,8 @@
-<p>
-  book-detail works!
-</p>
+<div class="card row">
+
+  <p>
+    {{book | json}}
+  </p>
+
+  <p><a [routerLink]="['/books']">Back</a></p>
+</div>

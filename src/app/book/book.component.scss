@@ -1,7 +1,10 @@
 $hoverColor: lightblue;
-$linkColor: lightblue;
+$linkColor: hsl(180, 58%, 48%);
+$cardBackground: lightcyan;
 
 .card {
+  background-color: $cardBackground;
+
   a {
     cursor: pointer;
     color: $linkColor;
@@ -10,5 +13,10 @@ $linkColor: lightblue;
     :hover, :active, :visited {
       color: $hoverColor;
     }
+  }
+
+  .card-text {
+    margin-top: -15px;
+    margin-left: 28px;
   }
 }
