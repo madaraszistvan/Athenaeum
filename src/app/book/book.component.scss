@@ -1,6 +1,6 @@
 $hoverColor: lightblue;
 $linkColor: hsl(180, 58%, 48%);
-$cardBackground: lightcyan;
+$cardBackground: hsl(240, 14%, 97%);
 
 .card {
   background-color: $cardBackground;
@@ -16,6 +16,12 @@ $cardBackground: lightcyan;
 
     :hover, :active, :visited {
       color: $hoverColor;
+    }
+
+    // delete link
+    &:nth-child(2) {
+      color: #aaa;
+      padding-left: 10px;
     }
   }
 

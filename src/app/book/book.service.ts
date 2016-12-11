@@ -48,4 +48,8 @@ export class BookService {
   addBook(book: Book) {
     this.data.push(book)
   }
+
+  deleteBook(book:Book) {
+    this.data.splice(this.data.indexOf(book), 1)
+  }
 }
